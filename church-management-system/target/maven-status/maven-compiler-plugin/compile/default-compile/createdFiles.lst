@@ -1,0 +1,15 @@
+rw\churchmanagement\controller\LocationController.class
+rw\churchmanagement\model\Location.class
+rw\churchmanagement\repository\LocationRepository.class
+rw\churchmanagement\service\UserService.class
+rw\churchmanagement\service\LocationService.class
+rw\churchmanagement\controller\UserController.class
+rw\churchmanagement\model\Location$LocationType.class
+rw\churchmanagement\model\User.class
+rw\churchmanagement\dto\LocationDTO.class
+rw\churchmanagement\repository\UserRepository.class
+rw\churchmanagement\repository\RoleRepository.class
+rw\churchmanagement\repository\UserProfileRepository.class
+rw\churchmanagement\ChurchManagementApplication.class
+rw\churchmanagement\model\UserProfile.class
+rw\churchmanagement\model\Role.class
