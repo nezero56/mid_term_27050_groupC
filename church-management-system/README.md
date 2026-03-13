@@ -11,6 +11,7 @@ Technology Stack
 TechnologyVersionPurposeJava17Programming languageSpring Boot3.2.0Backend frameworkSpring Data JPA3.2.0Database ORMPostgreSQL18Relational databaseHibernate6.3.1JPA implementationLombokLatestBoilerplate reductionMaven3.xBuild tool
 
 Project Structure
+
 church-management-system/
 ├── src/
 │   └── main/
