@@ -146,13 +146,13 @@ App is available at: **http://localhost:8082**
 
 ## Assessment Criteria — Implementation Map
 
-### 1. ERD with 5 Tables ✅ (3 Marks)
+### 1. ERD with 5 Tables 
 Five entity tables: `locations`, `users`, `roles`, `user_profiles`, `churches` + `members`
 All connected via foreign keys as shown in the ERD above.
 
 ---
 
-### 2. Location Saving — Province to Village ✅ (2 Marks)
+### 2. Location Saving — Province to Village 
 Location is saved top-down using `POST /api/locations` with a `parentId`:
 ```
 Province → District → Sector → Cell → Village
@@ -171,7 +171,7 @@ POST /api/locations
 
 ---
 
-### 3. Sorting and Pagination ✅ (5 Marks)
+### 3. Sorting and Pagination 
 
 **Pagination** loads data in pages instead of all at once — improves performance and reduces memory usage.
 **Sorting** orders results by any field in ASC or DESC direction.
@@ -294,7 +294,7 @@ GET /api/churches?page=0&size=5&sortBy=name&sortDir=ASC
 
 ---
 
-### 4. Many-to-Many Relationship ✅ (3 Marks)
+### 4. Many-to-Many Relationship 
 **User ↔ Role** — one user can have many roles, one role can belong to many users.
 
 Join table: `user_roles (user_id, role_id)`
@@ -321,7 +321,7 @@ POST /api/roles/{roleId}/assign/{userId}
 
 ---
 
-### 5. One-to-Many Relationship ✅ (2 Marks)
+### 5. One-to-Many Relationship 
 **Church → Members** — one church has many members.
 **Location → Children** — one province has many districts, etc.
 
@@ -361,7 +361,7 @@ private User user;
 
 ---
 
-### 7. existBy() Method ✅ (2 Marks)
+### 7. existBy() Method 
 
 Spring Data JPA generates an existence check query that returns `true` or `false` without loading the full object. It is faster than `findBy` because it stops at the first match.
 
@@ -421,7 +421,7 @@ GET /api/churches/check-exists?name=ADRA Church     → { "exists": false }
 
 ---
 
-### 8. Retrieve Users by Province ✅ (4 Marks)
+### 8. Retrieve Users by Province 
 
 Users are linked to **Village level only**. To retrieve by Province, the JPQL query navigates up 4 parent hops through the self-referenced `locations` table:
 
