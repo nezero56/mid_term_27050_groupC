@@ -78,4 +78,36 @@ public class LocationController {
             @PathVariable LocationType type) {
         return ResponseEntity.ok(locationService.getLocationsByTypeAndParent(type, parentId));
     }
+
+    /**
+     * UPDATE a Location
+     * PUT /api/locations/{id}
+     * LOGIC: Updates code, name, type, and optionally re-parents the location
+     */
+    @PutMapping("/{id}")
+    public ResponseEntity<Location> updateLocation(
+            @PathVariable UUID id,
+            @RequestBody LocationDTO dto) {
+        try {
+            Location updated = locationService.updateLocation(id, dto);
+            return ResponseEntity.ok(updated);
+        } catch (RuntimeException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    /**
+     * DELETE a Location
+     * DELETE /api/locations/{id}
+     * LOGIC: Removes the location; cascades to children due to orphanRemoval = true
+     */
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteLocation(@PathVariable UUID id) {
+        try {
+            locationService.deleteLocation(id);
+            return ResponseEntity.noContent().build();
+        } catch (RuntimeException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }
